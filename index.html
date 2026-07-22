@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -363,7 +363,8 @@ function isValidScriptUrl(u){ return /^https:\/\/script\.google\.com\/macros\/s\
 // github.io address) is discarded so it can never break loading again.
 var _savedUrl = localStorage.getItem(SCRIPT_URL_KEY);
 if (_savedUrl && !isValidScriptUrl(_savedUrl)) { localStorage.removeItem(SCRIPT_URL_KEY); _savedUrl = null; }
-var scriptUrl = (_savedUrl && isValidScriptUrl(_savedUrl)) ? _savedUrl : '';
+var DEFAULT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLPc3dDA91yG6tqHwZucSp8QLp7x8Zo-f0w24KdlQn3PCUCePYm7YN4my1oILjjQ/exec';
+var scriptUrl = (_savedUrl && isValidScriptUrl(_savedUrl)) ? _savedUrl : DEFAULT_SCRIPT_URL;
 var isLive = false;
 
 // LOGIN
